@@ -3,7 +3,7 @@ import React, { useRef } from "react";
 const PlacementCompanies = () => {
   const companies = [
     { name: "AANS Infosys", image: "brand.webp" },
-    { name: "TechAlpha", image: "taca.webp" },
+    { name: "TechAlpha", image: "Taca.webp" },
     { name: "Scorp", image: "scorp.webp" },
     { name: "International Education Overseas", image: "Edu.webp" },
     { name: "TopGro", image: "top.webp" },

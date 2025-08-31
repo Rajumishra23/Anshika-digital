@@ -4,7 +4,7 @@ const teamMembers = [
   {
     name: "Ankit KK",
     role: "Founder",
-    image: "ankit.webp",
+    image: "Ankit.webp",
   },
   {
     name: "Sulekha",

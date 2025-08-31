@@ -9,7 +9,7 @@ const students = [
   },
   {
     name: "Raj Mehra",
-    image: "raj.webp",
+    image: "Raj.webp",
     software: ["Photoshop", "Illustrator", "After Effects"],
     views: 345,
   },
@@ -21,7 +21,7 @@ const students = [
   },
   {
     name: "Aman",
-    image: "aman.webp",
+    image: "Aman.webp",
     software: ["After Effects", "Premiere Pro"],
     views: 345,
   },
@@ -33,7 +33,7 @@ const students = [
   },
   {
     name: "Hemant",
-    image: "hemant.webp",
+    image: "Hemant.webp",
     software: ["Premiere Pro", "XD", "Illustrator"],
     views: 345,
   },

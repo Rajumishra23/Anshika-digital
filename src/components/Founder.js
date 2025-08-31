@@ -3,7 +3,7 @@ import React from "react";
 const founders = [
   {
     name: "Ankit KK",
-    image: "ankit.webp",
+    image: "Ankit.webp",
   },
   {
     name: "Anshika Kumar Kushwaha",

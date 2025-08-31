@@ -16,7 +16,7 @@ const testimonials = [
   },
   {
     name: "Ramesh Sahu",
-    image: "Rajnish.webp",
+    image: "rajnish.webp",
     review:
       "Completed digital marketing course here. Learned SEO, social media, email marketing. Trainer support was excellent!",
   },
