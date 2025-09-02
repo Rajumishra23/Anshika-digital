@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 
 const placedStudents = [
-  { name: "Akil", role: "Graphic Designer", company: "Adwemy Motor Pvt. Ltd.", image: "Akil.webp" },
+  { name: "Akil", role: "Graphic Designer", company: "Adwemy Motor Pvt. Ltd.", image: "akil.webp" },
   { name: "Aman", role: "Graphic Designer", company: "Adwemy Motor Pvt. Ltd.", image: "Aman.webp" },
   { name: "Amit", role: "Graphic Designer", company: "Adwemy Motor Pvt. Ltd.", image: "amit.webp" },
   { name: "Arjun", role: "Graphic Designer", company: "Adwemy Motor Pvt. Ltd.", image: "arjun.webp" },

@@ -85,52 +85,52 @@ const ReviewSection = () => {
           </h3>
 
         <div className="space-y-6">
-  {/* Photoshop */}
-<div className="flex items-center bg-white px-4 py-3 rounded-md shadow-sm border border-gray-200 max-w-fit mx-auto mb-4">
+{/* Photoshop */}
+<div className="flex flex-col sm:flex-row items-center bg-white px-4 py-3 rounded-md shadow-sm border border-gray-200 max-w-fit mx-auto mb-4">
   <img
     src="/Image/sjcRYS.svg"
     alt="Photoshop"
-    className="w-[250px] h-[150px] object-contain mr-4"
+    className="w-[180px] h-[100px] sm:w-[250px] sm:h-[150px] object-contain sm:mr-4 mb-3 sm:mb-0"
   />
-  <div className="flex flex-col justify-center">
-    <h4 className="text-[30px] font-semibold text-gray-800 leading-tight">
+  <div className="flex flex-col justify-center text-center sm:text-left">
+    <h4 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-800 leading-tight">
       Photoshop
     </h4>
-    <button className="mt-2 inline-block px-3 py-1 bg-purple-600 text-white text-xs rounded hover:bg-purple-700 transition w-auto">
+    <button className="mt-2 inline-block px-4 py-2 bg-purple-600 text-white text-sm sm:text-xs rounded hover:bg-purple-700 transition w-auto mx-auto sm:mx-0">
       Read More
     </button>
   </div>
 </div>
 
 {/* Premiere Pro */}
-<div className="flex flex-row-reverse items-center bg-white px-4 py-3 rounded-md shadow-sm border border-gray-200 max-w-fit mx-auto mb-4">
+<div className="flex flex-col sm:flex-row-reverse items-center bg-white px-4 py-3 rounded-md shadow-sm border border-gray-200 max-w-fit mx-auto mb-4">
   <img
     src="/Image/ynQkii.svg"
     alt="Premiere Pro"
-    className="w-[250px] h-[150px] object-contain ml-4"
+    className="w-[180px] h-[100px] sm:w-[250px] sm:h-[150px] object-contain sm:ml-4 mb-3 sm:mb-0"
   />
-  <div className="flex flex-col justify-center text-right">
-    <h4 className="text-[30px] font-semibold text-gray-800 leading-tight">
+  <div className="flex flex-col justify-center text-center sm:text-right">
+    <h4 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-800 leading-tight">
       Premiere Pro
     </h4>
-    <button className="mt-2 inline-block px-3 py-1 bg-purple-600 text-white text-xs rounded hover:bg-purple-700 transition w-auto">
+    <button className="mt-2 inline-block px-4 py-2 bg-purple-600 text-white text-sm sm:text-xs rounded hover:bg-purple-700 transition w-auto mx-auto sm:mx-0">
       Read More
     </button>
   </div>
 </div>
 
 {/* After Effects */}
-<div className="flex items-center bg-white px-4 py-3 rounded-md shadow-sm border border-gray-200 max-w-fit mx-auto mb-4">
+<div className="flex flex-col sm:flex-row items-center bg-white px-4 py-3 rounded-md shadow-sm border border-gray-200 max-w-fit mx-auto mb-4">
   <img
     src="/Image/VrybWN.svg"
     alt="After Effects"
-    className="w-[250px] h-[150px] object-contain mr-4"
+    className="w-[180px] h-[100px] sm:w-[250px] sm:h-[150px] object-contain sm:mr-4 mb-3 sm:mb-0"
   />
-  <div className="flex flex-col justify-center">
-    <h4 className="text-[30px] font-semibold text-gray-800 leading-tight">
+  <div className="flex flex-col justify-center text-center sm:text-left">
+    <h4 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-800 leading-tight">
       After Effects
     </h4>
-    <button className="mt-2 inline-block px-3 py-1 bg-purple-600 text-white text-xs rounded hover:bg-purple-700 transition w-auto">
+    <button className="mt-2 inline-block px-4 py-2 bg-purple-600 text-white text-sm sm:text-xs rounded hover:bg-purple-700 transition w-auto mx-auto sm:mx-0">
       Read More
     </button>
   </div>
