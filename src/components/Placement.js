@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 
 const PlacementCompanies = () => {
   const companies = [
@@ -15,15 +15,26 @@ const PlacementCompanies = () => {
   const scrollTo = (direction) => {
     if (!containerRef.current) return;
 
-    if (direction === "top") {
-      containerRef.current.scrollTo({ top: 0, behavior: "smooth" });
-    } else {
-      containerRef.current.scrollTo({
-        top: containerRef.current.scrollHeight,
-        behavior: "smooth",
-      });
-    }
+    const el = containerRef.current;
+    const scrollAmount = el.scrollHeight;
+
+    el.scrollTo({
+      top: direction === "top" ? 0 : scrollAmount,
+      behavior: "smooth",
+    });
   };
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+
+    const preventScroll = (e) => e.preventDefault();
+    el.addEventListener("wheel", preventScroll, { passive: false });
+
+    return () => {
+      el.removeEventListener("wheel", preventScroll);
+    };
+  }, []);
 
   return (
     <section className="bg-white py-16 px-4 relative">
@@ -39,7 +50,8 @@ const PlacementCompanies = () => {
           {/* Logos Grid */}
           <div
             ref={containerRef}
-            className="grid grid-cols-2 gap-6 max-h-[400px] overflow-y-auto pr-14 scrollbar-hide"
+            className="grid grid-cols-2 gap-6 max-h-[400px] pr-14 scrollbar-hide"
+            style={{ overflowY: "hidden", touchAction: "none" }}
           >
             {companies.map((company, idx) => (
               <div

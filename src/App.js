@@ -14,6 +14,7 @@ import Founder from './components/Founder'
 import Reasons from './components/Reasons'
 import Footer from './components/Footer'
 import CourseHighlight from './components/CourseHighlights'
+import Review from './components/Review'
 
 const App = () => {
   return (
@@ -24,11 +25,13 @@ const App = () => {
       <Demo/>   
       <StudentFeedback/>
       <CourseHighlight/>
+      <Review/>
       <Placement/>
       <Portfolio/>
       <PlacedStudents/>
       <UpcomingBatches/>
       <TeamMember/>
+      
       <Testimonials/>
       <Founder/>
       <Reasons/>

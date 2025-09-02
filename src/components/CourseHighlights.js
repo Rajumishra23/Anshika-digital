@@ -28,7 +28,7 @@ const courseHighlights = [
     bg: "/Image/Asset32.svg",
   },
   {
-    title: "Fees",
+    title: "Fees & Payment Options:",
     subtitle: [
       "One Time Submit",
       "Extra Discount",
@@ -38,8 +38,11 @@ const courseHighlights = [
     bg: "/Image/Asset32.svg",
   },
   {
-    title: "Alternative Days Class",
-    subtitle: ["M W F", "M W F"],
+    title: "Class Schedule:",
+    subtitle: [
+      "Alternative Days",
+      "Monday, Wednesday, Friday",
+    ],
     bg: "/Image/Asset32.svg",
   },
 ];
@@ -60,10 +63,10 @@ export default function CourseHighlight() {
   };
 
   return (
-    <div className="w-full bg-white py-10 px-4 sm:px-6 md:px-10 relative">
+    <div className="w-full bg-white py-10 px-5 relative">
       {/* Heading + Arrows */}
       <div className="flex justify-center items-center mb-5 relative">
-        <h2 className="text-black text-2xl sm:text-3xl font-bold">Course Highlight</h2>
+        <h2 className="text-black text-3xl font-bold">Course Highlight</h2>
         <div className="absolute right-0 flex gap-2">
           <button
             className="p-2 bg-gray-800 rounded-full text-white hover:bg-gray-700"
@@ -80,47 +83,51 @@ export default function CourseHighlight() {
         </div>
       </div>
 
+      {/* Edge Gradient Overlays */}
+      <div className="absolute top-0 left-0 h-full w-10 bg-gradient-to-r from-white to-transparent pointer-events-none z-10" />
+      <div className="absolute top-0 right-0 h-full w-10 bg-gradient-to-l from-white to-transparent pointer-events-none z-10" />
+
       {/* Slider */}
       <div
         ref={sliderRef}
-        className="flex overflow-x-auto gap-4 scroll-smooth no-scrollbar"
+        className="flex overflow-x-auto gap-4 scroll-smooth no-scrollbar relative z-0"
       >
-        {courseHighlights.map((item, index) => (
-          <div
-            key={index}
-            className="relative min-w-[90vw] sm:min-w-[400px] md:min-w-[500px] flex-shrink-0 rounded-lg px-4 sm:px-6 pt-10 sm:pt-12 md:pt-16 pb-8 text-center text-white flex flex-col justify-center items-center overflow-hidden"
-            style={{
-              backgroundImage: `url(${item.bg})`,
-              backgroundSize: "cover",
-              backgroundPosition: "top center",
-              backgroundRepeat: "no-repeat",
-              minHeight: "300px",
-            }}
-          >
-            {/* Title */}
-            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 leading-tight z-10">
-              {item.title}
-            </h3>
+        {courseHighlights.map((item, index) => {
+          const isMultiLine = Array.isArray(item.subtitle);
 
-            {/* Subtitle */}
-            {Array.isArray(item.subtitle) ? (
-              <div className="space-y-1 z-10">
-                {item.subtitle.map((line, i) => (
-                  <p
-                    key={i}
-                    className="text-base sm:text-lg md:text-xl font-medium leading-snug tracking-wide"
-                  >
-                    {line}
-                  </p>
-                ))}
-              </div>
-            ) : (
-              <p className="text-base sm:text-lg md:text-xl font-medium leading-snug tracking-wide z-10">
-                {item.subtitle}
-              </p>
-            )}
-          </div>
-        ))}
+          return (
+            <div
+              key={index}
+              className="min-w-[700px] flex-shrink-0 rounded-lg p-6 text-center text-white shadow-xl border border-white/20"
+              style={{
+                backgroundImage: `url(${item.bg})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              <h3 className="text-3xl font-bold mb-3 drop-shadow-md">
+                {item.title}
+              </h3>
+
+              {isMultiLine ? (
+                <div className="space-y-1">
+                  {item.subtitle.map((line, i) => (
+                    <p
+                      key={i}
+                      className="text-sm font-medium leading-snug tracking-wide drop-shadow-md"
+                    >
+                      {line}
+                    </p>
+                  ))}
+                </div>
+              ) : (
+                <p className="text-base font-medium drop-shadow-md">
+                  {item.subtitle}
+                </p>
+              )}
+            </div>
+          );
+        })}
       </div>
     </div>
   );

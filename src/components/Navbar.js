@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <header className="bg-[#6a0dad] text-white shadow-md">
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
@@ -17,7 +19,23 @@ const Navbar = () => {
           <p className="text-xs text-white/80 ml-1">Digital Media Pvt. Ltd.</p>
         </div>
 
-        {/* Search Bar with Purple Background */}
+        {/* Contact + Hamburger (Mobile Only) */}
+        <div className="flex items-center space-x-4 md:hidden">
+          <span className="text-xs font-semibold">Call <span className="text-yellow-300">9958890093</span></span>
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="focus:outline-none"
+            aria-label="Toggle menu"
+          >
+            <div className="space-y-1">
+              <div className="w-5 h-0.5 bg-white"></div>
+              <div className="w-5 h-0.5 bg-white"></div>
+              <div className="w-5 h-0.5 bg-white"></div>
+            </div>
+          </button>
+        </div>
+
+        {/* Search Bar (Desktop Only) */}
         <div className="flex-1 mx-6 hidden md:flex items-center bg-[#6a0dad] border border-white/30 rounded-full px-3 py-1">
           <input
             type="text"
@@ -37,7 +55,7 @@ const Navbar = () => {
           </svg>
         </div>
 
-        {/* Nav Links + Sign In */}
+        {/* Nav Links + Sign In (Desktop Only) */}
         <div className="hidden md:flex items-center space-x-6 text-sm font-medium">
           <nav className="flex items-center space-x-6">
             <a href="#about" className="hover:underline focus:outline-none focus:ring-2 focus:ring-white rounded">
@@ -72,7 +90,6 @@ const Navbar = () => {
             </a>
           </nav>
 
-          {/* Sign In Button */}
           <button
             className="ml-4 bg-white text-[#6a0dad] font-semibold px-4 py-1 rounded-full hover:bg-gray-100 transition focus:outline-none focus:ring-2 focus:ring-white"
           >
@@ -80,6 +97,25 @@ const Navbar = () => {
           </button>
         </div>
       </div>
+
+      {/* Mobile Dropdown Menu */}
+      {menuOpen && (
+        <div className="md:hidden bg-[#6a0dad] px-4 pb-4 space-y-2 text-sm font-medium">
+          <a href="#about" className="block py-2 border-b border-white/20">About</a>
+          <details className="group">
+            <summary className="py-2 cursor-pointer border-b border-white/20">Courses</summary>
+            <div className="pl-4 space-y-1 mt-1">
+              <a href="#web" className="block">Graphic Designing</a>
+              <a href="#uiux" className="block">Video Editing</a>
+              <a href="#frontend" className="block">Digital Marketing</a>
+            </div>
+          </details>
+          <a href="#contact" className="block py-2 border-b border-white/20">Contact</a>
+          <button className="w-full bg-white text-[#6a0dad] font-semibold py-2 rounded-full mt-2">
+            Sign In
+          </button>
+        </div>
+      )}
     </header>
   );
 };

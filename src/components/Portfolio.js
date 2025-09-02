@@ -1,42 +1,12 @@
 import React, { useRef } from "react";
 
 const students = [
-  {
-    name: "Sunil Kumar",
-    image: "sunil.webp",
-    software: ["Photoshop", "Illustrator", "CorelDraw"],
-    views: 345,
-  },
-  {
-    name: "Raj Mehra",
-    image: "Raj.webp",
-    software: ["Photoshop", "Illustrator", "After Effects"],
-    views: 345,
-  },
-  {
-    name: "Pooja Singh",
-    image: "pooja.webp",
-    software: ["CorelDraw", "Photoshop", "Illustrator"],
-    views: 345,
-  },
-  {
-    name: "Aman",
-    image: "Aman.webp",
-    software: ["After Effects", "Premiere Pro"],
-    views: 345,
-  },
-  {
-    name: "Mansi",
-    image: "mansi.webp",
-    software: ["After Effects", "Figma", "Photoshop"],
-    views: 345,
-  },
-  {
-    name: "Hemant",
-    image: "Hemant.webp",
-    software: ["Premiere Pro", "XD", "Illustrator"],
-    views: 345,
-  },
+  { name: "Sunil Kumar", image: "sunil.webp", software: ["Photoshop", "Illustrator", "CorelDraw"], views: 345 },
+  { name: "Raj Mehra", image: "Raj.webp", software: ["Photoshop", "Illustrator", "After Effects"], views: 345 },
+  { name: "Pooja Singh", image: "pooja.webp", software: ["CorelDraw", "Photoshop", "Illustrator"], views: 345 },
+  { name: "Aman", image: "Aman.webp", software: ["After Effects", "Premiere Pro"], views: 345 },
+  { name: "Mansi", image: "mansi.webp", software: ["After Effects", "Figma", "Photoshop"], views: 345 },
+  { name: "Hemant", image: "Hemant.webp", software: ["Premiere Pro", "XD", "Illustrator"], views: 345 },
 ];
 
 const Portfolio = () => {
@@ -52,14 +22,14 @@ const Portfolio = () => {
   };
 
   return (
-    <section className="bg-white py-16 px-4">
+    <section className="bg-white py-12 px-4">
       <div className="max-w-7xl mx-auto text-center relative">
         {/* Heading */}
-        <h2 className="text-3xl font-bold text-gray-800 mb-12">
+        <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-10">
           Our Student Works <span className="text-purple-600">Portfolio</span>
         </h2>
 
-        {/* Horizontal Scroll Row */}
+        {/* Scroll Wrapper */}
         <div className="relative">
           {/* Left Button */}
           <button
@@ -72,19 +42,24 @@ const Portfolio = () => {
           {/* Cards Container */}
           <div
             ref={scrollRef}
-            className="flex overflow-x-auto space-x-6 scrollbar-hide scroll-smooth px-12"
+            className="flex space-x-4 sm:space-x-6 px-4 sm:px-12 scroll-smooth scrollbar-hide"
+            style={{
+              overflowX: "auto",
+              WebkitOverflowScrolling: "touch",
+              touchAction: "none", // disables swipe on mobile
+            }}
           >
             {students.map((student, idx) => (
               <div
                 key={idx}
-                className="min-w-[250px] bg-purple-100 rounded-xl shadow-md hover:shadow-lg transition duration-300 p-6 text-center flex-shrink-0"
+                className="min-w-[220px] sm:min-w-[250px] bg-purple-100 rounded-xl shadow-md hover:shadow-lg transition duration-300 p-5 sm:p-6 text-center flex-shrink-0"
               >
                 <img
                   src={student.image}
                   alt={student.name}
-                  className="w-24 h-24 object-cover rounded-full mx-auto mb-4"
+                  className="w-20 h-20 sm:w-24 sm:h-24 object-cover rounded-full mx-auto mb-3 sm:mb-4"
                 />
-                <h3 className="text-lg font-semibold text-purple-800 mb-2">
+                <h3 className="text-base sm:text-lg font-semibold text-purple-800 mb-1 sm:mb-2">
                   {student.name}
                 </h3>
                 <p className="text-sm text-gray-700 mb-2">
@@ -93,9 +68,7 @@ const Portfolio = () => {
                 <button className="bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-700 transition text-sm mb-2">
                   Portfolio
                 </button>
-                <p className="text-xs text-gray-500">
-                  👁️ {student.views} views
-                </p>
+                <p className="text-xs text-gray-500">👁️ {student.views} views</p>
               </div>
             ))}
           </div>
