@@ -39,23 +39,21 @@ const courseHighlights = [
   },
   {
     title: "Class Schedule:",
-    subtitle: [
-      "Alternative Days",
-      "Monday, Wednesday, Friday",
-    ],
+    subtitle: ["Alternative Days", "Monday, Wednesday, Friday"],
     bg: "/Image/Asset32.svg",
   },
 ];
 
 export default function CourseHighlight() {
-  const sliderRef = useRef(null);
+  const desktopSliderRef = useRef(null);
+  const mobileSliderRef = useRef(null);
 
-  const scroll = (direction) => {
-    if (sliderRef.current) {
-      const cardWidth = sliderRef.current.firstChild.offsetWidth + 16;
-      const { scrollLeft } = sliderRef.current;
+  const scroll = (ref, direction) => {
+    if (ref.current) {
+      const cardWidth = ref.current.firstChild.offsetWidth + 16;
+      const { scrollLeft } = ref.current;
       const scrollAmount = direction === "left" ? -cardWidth : cardWidth;
-      sliderRef.current.scrollTo({
+      ref.current.scrollTo({
         left: scrollLeft + scrollAmount,
         behavior: "smooth",
       });
@@ -72,13 +70,13 @@ export default function CourseHighlight() {
           <div className="absolute right-0 flex gap-2">
             <button
               className="p-2 bg-gray-800 rounded-full text-white hover:bg-gray-700"
-              onClick={() => scroll("left")}
+              onClick={() => scroll(desktopSliderRef, "left")}
             >
               <FaChevronLeft />
             </button>
             <button
               className="p-2 bg-gray-800 rounded-full text-white hover:bg-gray-700"
-              onClick={() => scroll("right")}
+              onClick={() => scroll(desktopSliderRef, "right")}
             >
               <FaChevronRight />
             </button>
@@ -91,7 +89,7 @@ export default function CourseHighlight() {
 
         {/* Slider */}
         <div
-          ref={sliderRef}
+          ref={desktopSliderRef}
           className="flex overflow-x-auto gap-4 scroll-smooth no-scrollbar relative z-0"
         >
           {courseHighlights.map((item, index) => {
@@ -134,72 +132,69 @@ export default function CourseHighlight() {
       </div>
 
       {/* Mobile View */}
-<div className="block sm:hidden">
-  {/* Heading + Arrows */}
-  <div className="flex items-center justify-between mb-6">
-    <h2 className="text-black text-2xl font-bold">
-      Course Highlight
-    </h2>
-    <div className="flex gap-2">
-      <button
-        className="p-2 bg-gray-800 rounded-full text-white hover:bg-gray-700"
-        onClick={() => scroll("left")}
-      >
-        <FaChevronLeft />
-      </button>
-      <button
-        className="p-2 bg-gray-800 rounded-full text-white hover:bg-gray-700"
-        onClick={() => scroll("right")}
-      >
-        <FaChevronRight />
-      </button>
-    </div>
-  </div>
-
-  {/* Slider */}
-  <div
-    ref={sliderRef}
-    className="flex gap-4 overflow-x-hidden scroll-smooth pb-2"
-  >
-    {courseHighlights.map((item, index) => {
-      const isMultiLine = Array.isArray(item.subtitle);
-
-      return (
-        <div
-          key={index}
-          className="min-w-[90vw] flex-shrink-0 rounded-lg p-4 text-center text-white shadow-xl border border-white/20"
-          style={{
-            backgroundImage: `url(${item.bg})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        >
-          <h3 className="text-xl font-bold mb-2 drop-shadow-md">
-            {item.title}
-          </h3>
-
-          {isMultiLine ? (
-            <div className="space-y-1">
-              {item.subtitle.map((line, i) => (
-                <p
-                  key={i}
-                  className="text-sm font-medium leading-snug drop-shadow-md"
-                >
-                  {line}
-                </p>
-              ))}
-            </div>
-          ) : (
-            <p className="text-sm font-medium drop-shadow-md">
-              {item.subtitle}
-            </p>
-          )}
+      <div className="block sm:hidden">
+        {/* Heading + Arrows */}
+        <div className="flex items-center justify-between mb-6">
+          <h2 className="text-black text-2xl font-bold">Course Highlight</h2>
+          <div className="flex gap-2">
+            <button
+              className="p-2 bg-gray-800 rounded-full text-white hover:bg-gray-700"
+              onClick={() => scroll(mobileSliderRef, "left")}
+            >
+              <FaChevronLeft />
+            </button>
+            <button
+              className="p-2 bg-gray-800 rounded-full text-white hover:bg-gray-700"
+              onClick={() => scroll(mobileSliderRef, "right")}
+            >
+              <FaChevronRight />
+            </button>
+          </div>
         </div>
-      );
-    })}
-  </div>
-</div>
 
+        {/* Slider */}
+        <div
+          ref={mobileSliderRef}
+          className="flex gap-4 overflow-x-hidden scroll-smooth pb-2"
+        >
+          {courseHighlights.map((item, index) => {
+            const isMultiLine = Array.isArray(item.subtitle);
+
+            return (
+              <div
+                key={index}
+                className="min-w-[90vw] flex-shrink-0 rounded-lg p-4 text-center text-white shadow-xl border border-white/20"
+                style={{
+                  backgroundImage: `url(${item.bg})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+              >
+                <h3 className="text-xl font-bold mb-2 drop-shadow-md">
+                  {item.title}
+                </h3>
+
+                {isMultiLine ? (
+                  <div className="space-y-1">
+                    {item.subtitle.map((line, i) => (
+                      <p
+                        key={i}
+                        className="text-sm font-medium leading-snug drop-shadow-md"
+                      >
+                        {line}
+                      </p>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="text-sm font-medium drop-shadow-md">
+                    {item.subtitle}
+                  </p>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 }

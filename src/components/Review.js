@@ -73,11 +73,11 @@ const ReviewSection = () => {
 
         {/* Expanded Image Section + Software Covered */}
         <div className="bg-gray-100 rounded-xl shadow-lg p-6 mb-10">
-          <img
-            src="/Image/gOFofM.svg"
-            alt="Review Banner"
-            className="w-[1000px] h-[1000px] object-cover rounded-lg mb-6"
-          />
+  <img
+    src="/Image/gOFofM.svg"
+    alt="Review Banner"
+    className="w-full max-w-[1000px] h-auto object-contain rounded-lg mb-6 mx-auto"
+  />
 
           {/* Software Covered Section Inside Same Box */}
           <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">
@@ -93,7 +93,7 @@ const ReviewSection = () => {
     className="w-[250px] h-[150px] object-contain mr-4"
   />
   <div className="flex flex-col justify-center">
-    <h4 className="text-[16px] font-semibold text-gray-800 leading-tight">
+    <h4 className="text-[30px] font-semibold text-gray-800 leading-tight">
       Photoshop
     </h4>
     <button className="mt-2 inline-block px-3 py-1 bg-purple-600 text-white text-xs rounded hover:bg-purple-700 transition w-auto">
@@ -110,7 +110,7 @@ const ReviewSection = () => {
     className="w-[250px] h-[150px] object-contain ml-4"
   />
   <div className="flex flex-col justify-center text-right">
-    <h4 className="text-[16px] font-semibold text-gray-800 leading-tight">
+    <h4 className="text-[30px] font-semibold text-gray-800 leading-tight">
       Premiere Pro
     </h4>
     <button className="mt-2 inline-block px-3 py-1 bg-purple-600 text-white text-xs rounded hover:bg-purple-700 transition w-auto">
@@ -127,7 +127,7 @@ const ReviewSection = () => {
     className="w-[250px] h-[150px] object-contain mr-4"
   />
   <div className="flex flex-col justify-center">
-    <h4 className="text-[16px] font-semibold text-gray-800 leading-tight">
+    <h4 className="text-[30px] font-semibold text-gray-800 leading-tight">
       After Effects
     </h4>
     <button className="mt-2 inline-block px-3 py-1 bg-purple-600 text-white text-xs rounded hover:bg-purple-700 transition w-auto">
