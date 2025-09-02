@@ -76,7 +76,7 @@ const ReviewSection = () => {
           <img
             src="/Image/gOFofM.svg"
             alt="Review Banner"
-            className="w-full h-[800px] object-cover rounded-lg mb-6"
+            className="w-[1000px] h-[1000px] object-cover rounded-lg mb-6"
           />
 
           {/* Software Covered Section Inside Same Box */}

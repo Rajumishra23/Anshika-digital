@@ -134,50 +134,72 @@ export default function CourseHighlight() {
       </div>
 
       {/* Mobile View */}
-      <div className="block sm:hidden">
-        <h2 className="text-black text-2xl font-bold text-center mb-6">
-          Course Highlight
-        </h2>
+<div className="block sm:hidden">
+  {/* Heading + Arrows */}
+  <div className="flex items-center justify-between mb-6">
+    <h2 className="text-black text-2xl font-bold">
+      Course Highlight
+    </h2>
+    <div className="flex gap-2">
+      <button
+        className="p-2 bg-gray-800 rounded-full text-white hover:bg-gray-700"
+        onClick={() => scroll("left")}
+      >
+        <FaChevronLeft />
+      </button>
+      <button
+        className="p-2 bg-gray-800 rounded-full text-white hover:bg-gray-700"
+        onClick={() => scroll("right")}
+      >
+        <FaChevronRight />
+      </button>
+    </div>
+  </div>
 
-        <div className="flex overflow-x-auto gap-4 scroll-smooth no-scrollbar pb-2">
-          {courseHighlights.map((item, index) => {
-            const isMultiLine = Array.isArray(item.subtitle);
+  {/* Slider */}
+  <div
+    ref={sliderRef}
+    className="flex gap-4 overflow-x-hidden scroll-smooth pb-2"
+  >
+    {courseHighlights.map((item, index) => {
+      const isMultiLine = Array.isArray(item.subtitle);
 
-            return (
-              <div
-                key={index}
-                className="min-w-[90vw] flex-shrink-0 rounded-lg p-4 text-center text-white shadow-xl border border-white/20"
-                style={{
-                  backgroundImage: `url(${item.bg})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                }}
-              >
-                <h3 className="text-xl font-bold mb-2 drop-shadow-md">
-                  {item.title}
-                </h3>
+      return (
+        <div
+          key={index}
+          className="min-w-[90vw] flex-shrink-0 rounded-lg p-4 text-center text-white shadow-xl border border-white/20"
+          style={{
+            backgroundImage: `url(${item.bg})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
+          <h3 className="text-xl font-bold mb-2 drop-shadow-md">
+            {item.title}
+          </h3>
 
-                {isMultiLine ? (
-                  <div className="space-y-1">
-                    {item.subtitle.map((line, i) => (
-                      <p
-                        key={i}
-                        className="text-sm font-medium leading-snug drop-shadow-md"
-                      >
-                        {line}
-                      </p>
-                    ))}
-                  </div>
-                ) : (
-                  <p className="text-sm font-medium drop-shadow-md">
-                    {item.subtitle}
-                  </p>
-                )}
-              </div>
-            );
-          })}
+          {isMultiLine ? (
+            <div className="space-y-1">
+              {item.subtitle.map((line, i) => (
+                <p
+                  key={i}
+                  className="text-sm font-medium leading-snug drop-shadow-md"
+                >
+                  {line}
+                </p>
+              ))}
+            </div>
+          ) : (
+            <p className="text-sm font-medium drop-shadow-md">
+              {item.subtitle}
+            </p>
+          )}
         </div>
-      </div>
+      );
+    })}
+  </div>
+</div>
+
     </div>
   );
 }
