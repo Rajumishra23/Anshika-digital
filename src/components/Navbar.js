@@ -4,6 +4,7 @@ const Navbar = () => {
   return (
     <header className="bg-[#6a0dad] text-white shadow-md">
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+        
         {/* Logo + Tagline */}
         <div className="flex flex-col items-start space-y-1">
           <div className="relative">
@@ -16,17 +17,17 @@ const Navbar = () => {
           <p className="text-xs text-white/80 ml-1">Digital Media Pvt. Ltd.</p>
         </div>
 
-        {/* Search Bar */}
-        <div className="flex-1 mx-6 hidden md:flex items-center bg-white rounded-full px-3 py-1">
+        {/* Search Bar with Purple Background */}
+        <div className="flex-1 mx-6 hidden md:flex items-center bg-[#6a0dad] border border-white/30 rounded-full px-3 py-1">
           <input
             type="text"
             placeholder="Search..."
-            className="w-full px-2 py-1 text-sm text-gray-800 bg-transparent outline-none"
+            className="w-full px-2 py-1 text-sm text-white placeholder-white/80 bg-transparent outline-none"
             aria-label="Search"
           />
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-7 text-gray-500"
+            className="h-5 w-7 text-white/80"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"

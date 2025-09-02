@@ -36,21 +36,19 @@ const StudentFeedback = () => {
         </div>
 
         {/* CTA Button */}
-        <a
-          href="#"
-          className="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition text-sm font-semibold"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5 mr-2"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4 4m0 0l4-4m-4 4V4" />
-          </svg>
-          Download Course Brochure
-        </a>
+      <a
+  href="#"
+  className="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition text-sm font-semibold"
+>
+  {/* SVG Icon */}
+  <img
+    src="/Image/Asset32.svg" // your SVG path
+    alt="icon"
+    className="w-5 h-5 mr-2"
+  />
+
+  Download Course Brochure
+</a>
       </div>
     </section>
   );

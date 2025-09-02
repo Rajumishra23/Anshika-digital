@@ -11,14 +11,14 @@ const DemoSection = () => {
         </h2>
 
         {/* Content Grid */}
-        <div className="grid md:grid-cols-2 gap-12 items-start">
+        <div className="grid md:grid-cols-2 gap-12 items-stretch">
           
           {/* Left Side: Demo Form */}
-          <div className="bg-white text-gray-800 rounded-xl p-8 shadow-lg w-full">
+          <div className="bg-white text-gray-800 rounded-xl p-8 shadow-lg h-full flex flex-col justify-center">
             <h2 className="text-2xl font-bold mb-6 text-center text-purple-700">
               Book Free Demo Session
             </h2>
-            <form className="space-y-7 ">
+            <form className="space-y-5">
               <input
                 type="text"
                 placeholder="Full Name"
@@ -53,35 +53,65 @@ const DemoSection = () => {
           </div>
 
           {/* Right Side: Credentials */}
-          <div className="flex flex-col justify-center">
-            <h2 className="text-3xl font-bold mb-4 leading-snug">
-              Become a <span className="text-yellow-300">Professional</span> and Certified
+          <div className="bg-indigo-100 text-black rounded-xl p-6 shadow-lg h-full flex flex-col justify-center items-center max-w-md mx-auto">
+            <h2 className="text-2xl font-bold mb-4 text-purple-700 text-center">
+              Become a <span className="text-yellow-500 font-bold ">Professional</span> <br /> and Certified
             </h2>
-            <p className="mb-6 text-lg">
+            <p className="mb-6 text-base text-center text-gray-700">
               ✅ Verified with Multi-Factor  
               <br />
               ✅ Approved with 100% Authenticated
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div className="bg-purple-800 rounded-lg p-4 shadow-md">
-                <h3 className="text-xl font-semibold mb-2">1.</h3>
-                <p>11 Years of excellence in computer education</p>
+            <div className="grid grid-cols-2 gap-4 w-full">
+              {/* Card 1 */}
+              <div className="bg-white text-black rounded-lg p-4 shadow-md text-center border">
+                <div className="flex justify-center mb-2">
+                  <div className="bg-purple-200 text-purple-800 font-bold w-10 h-10 flex items-center justify-center rounded-full">
+                    1
+                  </div>
+                </div>
+                <p className="text-sm font-medium">
+                  11 Years of excellency in computer education
+                </p>
               </div>
-              <div className="bg-purple-800 rounded-lg p-4 shadow-md">
-                <h3 className="text-xl font-semibold mb-2">2.</h3>
-                <p>Institute registered Ministry of MSME Govt of India</p>
+
+              {/* Card 2 */}
+              <div className="bg-white text-black rounded-lg p-4 shadow-md text-center border">
+                <div className="flex justify-center mb-2">
+                  <div className="bg-purple-200 text-purple-800 font-bold w-10 h-10 flex items-center justify-center rounded-full">
+                    2
+                  </div>
+                </div>
+                <p className="text-sm font-medium">
+                  Institute registered Ministry of MSME Govt.of India
+                </p>
               </div>
-              <div className="bg-purple-800 rounded-lg p-4 shadow-md">
-                <h3 className="text-xl font-semibold mb-2">3.</h3>
-                <p>11 Years of excellence in computer education</p>
+
+              {/* Card 3 */}
+              <div className="bg-white text-black rounded-lg p-4 shadow-md text-center border">
+                <div className="flex justify-center mb-2">
+                  <div className="bg-purple-200 text-purple-800 font-bold w-10 h-10 flex items-center justify-center rounded-full">
+                    3
+                  </div>
+                </div>
+                <p className="text-sm font-medium">
+                  11 Years of excellency in computer education
+                </p>
               </div>
-              <div className="bg-purple-800 rounded-lg p-4 shadow-md">
-                <h3 className="text-xl font-semibold mb-2">4.</h3>
-                <p>ISO Certified</p>
+
+              {/* Card 4 */}
+              <div className="bg-white text-black rounded-lg p-4 shadow-md text-center border">
+                <div className="flex justify-center mb-2">
+                  <div className="bg-purple-200 text-purple-800 font-bold w-10 h-10 flex items-center justify-center rounded-full">
+                    4
+                  </div>
+                </div>
+                <p className="text-sm font-medium">ISO Certified</p>
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>
