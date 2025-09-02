@@ -21,19 +21,19 @@ const HeroWithVideo = () => {
         </div>
 
         {/* Center Content */}
-        <div className="text-center md:col-span-1">
-          <h1
-            className="font-extrabold leading-snug text-base sm:text-lg md:text-2xl space-y-1"
-            style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}
-          >
-            <span className="text-black block text-sm sm:text-base">Best</span>
-            <span className="text-black block text-xl sm:text-2xl md:text-4xl">Institute for</span>
-            <span className="text-[#6a0dad] block text-base sm:text-lg md:text-xl">Graphic Designing,</span>
-            <span className="text-pink-500 block text-base sm:text-lg md:text-xl">Digital Marketing</span>
-            <span className="text-[#6A0DAD] block text-base sm:text-lg md:text-xl">&</span>
-            <span className="text-blue-500 block text-base sm:text-lg md:text-xl">Video Editing</span>
-            <span className="text-black block text-base sm:text-lg md:text-xl">Courses in Delhi</span>
-          </h1>
+       <div className="text-center text-3xl md:col-span-1">
+  <h1
+    className="font-extrabold leading-snug space-y-1"
+    style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}
+  >
+    <span className="block text-3xl sm:text-4xl md:text-4xl text-black">Best</span>
+    <span className="block text-2xl sm:text-3xl md:text-3xl text-black">Institute for</span>
+    <span className="block text-2xl sm:text-3xl md:text-3xl text-[#6a0dad]">Graphic Designing,</span>
+    <span className="block text-2xl sm:text-3xl md:text-3xl text-pink-500">Digital Marketing</span>
+    <span className="block text-2xl sm:text-3xl md:text-3xl text-[#6A0DAD]">&</span>
+    <span className="block text-2xl sm:text-3xl md:text-3xl text-blue-500">Video Editing</span>
+    <span className="block text-2xl sm:text-3xl md:text-3xl text-black">Courses in Delhi</span>
+  </h1>
 
           <p
             className="mt-4 text-sm sm:text-base leading-relaxed text-gray-700 px-2"

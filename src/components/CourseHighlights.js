@@ -29,20 +29,12 @@ const courseHighlights = [
   },
   {
     title: "Fees & Payment Options:",
-    subtitle: [
-      "One Time Submit",
-      "Extra Discount",
-      "EMI also Available",
-      "3–6 Months",
-    ],
+    subtitle: ["One Time Submit", "Extra Discount", "EMI also Available", "3–6 Months"],
     bg: "/Image/Asset32.svg",
   },
   {
     title: "Class Schedule:",
-    subtitle: [
-      "Alternative Days",
-      "Monday, Wednesday, Friday",
-    ],
+    subtitle: ["Alternative Days", "Monday, Wednesday, Friday"],
     bg: "/Image/Asset32.svg",
   },
 ];
@@ -53,10 +45,9 @@ export default function CourseHighlight() {
   const scroll = (direction) => {
     if (sliderRef.current) {
       const cardWidth = sliderRef.current.firstChild.offsetWidth + 16;
-      const { scrollLeft } = sliderRef.current;
       const scrollAmount = direction === "left" ? -cardWidth : cardWidth;
       sliderRef.current.scrollTo({
-        left: scrollLeft + scrollAmount,
+        left: sliderRef.current.scrollLeft + scrollAmount,
         behavior: "smooth",
       });
     }
@@ -83,14 +74,10 @@ export default function CourseHighlight() {
         </div>
       </div>
 
-      {/* Edge Gradient Overlays */}
-      <div className="absolute top-0 left-0 h-full w-10 bg-gradient-to-r from-white to-transparent pointer-events-none z-10" />
-      <div className="absolute top-0 right-0 h-full w-10 bg-gradient-to-l from-white to-transparent pointer-events-none z-10" />
-
       {/* Slider */}
       <div
         ref={sliderRef}
-        className="flex overflow-x-auto gap-4 scroll-smooth no-scrollbar relative z-0"
+        className="flex gap-4 overflow-hidden touch-none" // disable swipe manually
       >
         {courseHighlights.map((item, index) => {
           const isMultiLine = Array.isArray(item.subtitle);
@@ -98,14 +85,14 @@ export default function CourseHighlight() {
           return (
             <div
               key={index}
-              className="min-w-[700px] flex-shrink-0 rounded-lg p-6 text-center text-white shadow-xl border border-white/20"
+              className="flex-shrink-0 w-full sm:w-[500px] md:w-[700px] rounded-lg p-6 text-center text-white shadow-xl border border-white/20"
               style={{
                 backgroundImage: `url(${item.bg})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
             >
-              <h3 className="text-3xl font-bold mb-3 drop-shadow-md">
+              <h3 className="text-2xl sm:text-3xl md:text-3xl font-bold mb-3 drop-shadow-md">
                 {item.title}
               </h3>
 
@@ -114,14 +101,14 @@ export default function CourseHighlight() {
                   {item.subtitle.map((line, i) => (
                     <p
                       key={i}
-                      className="text-sm font-medium leading-snug tracking-wide drop-shadow-md"
+                      className="text-sm sm:text-base font-medium leading-snug tracking-wide drop-shadow-md"
                     >
                       {line}
                     </p>
                   ))}
                 </div>
               ) : (
-                <p className="text-base font-medium drop-shadow-md">
+                <p className="text-sm sm:text-base font-medium drop-shadow-md">
                   {item.subtitle}
                 </p>
               )}
