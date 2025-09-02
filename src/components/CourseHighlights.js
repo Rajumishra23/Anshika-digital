@@ -29,12 +29,20 @@ const courseHighlights = [
   },
   {
     title: "Fees & Payment Options:",
-    subtitle: ["One Time Submit", "Extra Discount", "EMI also Available", "3–6 Months"],
+    subtitle: [
+      "One Time Submit",
+      "Extra Discount",
+      "EMI also Available",
+      "3–6 Months",
+    ],
     bg: "/Image/Asset32.svg",
   },
   {
     title: "Class Schedule:",
-    subtitle: ["Alternative Days", "Monday, Wednesday, Friday"],
+    subtitle: [
+      "Alternative Days",
+      "Monday, Wednesday, Friday",
+    ],
     bg: "/Image/Asset32.svg",
   },
 ];
@@ -45,9 +53,10 @@ export default function CourseHighlight() {
   const scroll = (direction) => {
     if (sliderRef.current) {
       const cardWidth = sliderRef.current.firstChild.offsetWidth + 16;
+      const { scrollLeft } = sliderRef.current;
       const scrollAmount = direction === "left" ? -cardWidth : cardWidth;
       sliderRef.current.scrollTo({
-        left: sliderRef.current.scrollLeft + scrollAmount,
+        left: scrollLeft + scrollAmount,
         behavior: "smooth",
       });
     }
@@ -55,66 +64,119 @@ export default function CourseHighlight() {
 
   return (
     <div className="w-full bg-white py-10 px-5 relative">
-      {/* Heading + Arrows */}
-      <div className="flex justify-center items-center mb-5 relative">
-        <h2 className="text-black text-3xl font-bold">Course Highlight</h2>
-        <div className="absolute right-0 flex gap-2">
-          <button
-            className="p-2 bg-gray-800 rounded-full text-white hover:bg-gray-700"
-            onClick={() => scroll("left")}
-          >
-            <FaChevronLeft />
-          </button>
-          <button
-            className="p-2 bg-gray-800 rounded-full text-white hover:bg-gray-700"
-            onClick={() => scroll("right")}
-          >
-            <FaChevronRight />
-          </button>
+      {/* Desktop View */}
+      <div className="sm:block hidden">
+        {/* Heading + Arrows */}
+        <div className="flex justify-center items-center mb-5 relative">
+          <h2 className="text-black text-3xl font-bold">Course Highlight</h2>
+          <div className="absolute right-0 flex gap-2">
+            <button
+              className="p-2 bg-gray-800 rounded-full text-white hover:bg-gray-700"
+              onClick={() => scroll("left")}
+            >
+              <FaChevronLeft />
+            </button>
+            <button
+              className="p-2 bg-gray-800 rounded-full text-white hover:bg-gray-700"
+              onClick={() => scroll("right")}
+            >
+              <FaChevronRight />
+            </button>
+          </div>
+        </div>
+
+        {/* Edge Gradient Overlays */}
+        <div className="absolute top-0 left-0 h-full w-10 bg-gradient-to-r from-white to-transparent pointer-events-none z-10" />
+        <div className="absolute top-0 right-0 h-full w-10 bg-gradient-to-l from-white to-transparent pointer-events-none z-10" />
+
+        {/* Slider */}
+        <div
+          ref={sliderRef}
+          className="flex overflow-x-auto gap-4 scroll-smooth no-scrollbar relative z-0"
+        >
+          {courseHighlights.map((item, index) => {
+            const isMultiLine = Array.isArray(item.subtitle);
+
+            return (
+              <div
+                key={index}
+                className="min-w-[700px] flex-shrink-0 rounded-lg p-6 text-center text-white shadow-xl border border-white/20"
+                style={{
+                  backgroundImage: `url(${item.bg})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+              >
+                <h3 className="text-3xl font-bold mb-3 drop-shadow-md">
+                  {item.title}
+                </h3>
+
+                {isMultiLine ? (
+                  <div className="space-y-1">
+                    {item.subtitle.map((line, i) => (
+                      <p
+                        key={i}
+                        className="text-sm font-medium leading-snug tracking-wide drop-shadow-md"
+                      >
+                        {line}
+                      </p>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="text-base font-medium drop-shadow-md">
+                    {item.subtitle}
+                  </p>
+                )}
+              </div>
+            );
+          })}
         </div>
       </div>
 
-      {/* Slider */}
-      <div
-        ref={sliderRef}
-        className="flex gap-4 overflow-hidden touch-none" // disable swipe manually
-      >
-        {courseHighlights.map((item, index) => {
-          const isMultiLine = Array.isArray(item.subtitle);
+      {/* Mobile View */}
+      <div className="block sm:hidden">
+        <h2 className="text-black text-2xl font-bold text-center mb-6">
+          Course Highlight
+        </h2>
 
-          return (
-            <div
-              key={index}
-              className="flex-shrink-0 w-full sm:w-[500px] md:w-[700px] rounded-lg p-6 text-center text-white shadow-xl border border-white/20"
-              style={{
-                backgroundImage: `url(${item.bg})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            >
-              <h3 className="text-2xl sm:text-3xl md:text-3xl font-bold mb-3 drop-shadow-md">
-                {item.title}
-              </h3>
+        <div className="flex overflow-x-auto gap-4 scroll-smooth no-scrollbar pb-2">
+          {courseHighlights.map((item, index) => {
+            const isMultiLine = Array.isArray(item.subtitle);
 
-              {isMultiLine ? (
-                <div className="space-y-1">
-                  {item.subtitle.map((line, i) => (
-                    <p
-                      key={i}
-                      className="text-sm sm:text-base font-medium leading-snug tracking-wide drop-shadow-md"
-                    >
-                      {line}
-                    </p>
-                  ))}
-                </div>
-              ) : (
-                <p className="text-sm sm:text-base font-medium drop-shadow-md">
-                  {item.subtitle}
-                </p>
-              )}
-            </div>
-          );
-        })}
+            return (
+              <div
+                key={index}
+                className="min-w-[90vw] flex-shrink-0 rounded-lg p-4 text-center text-white shadow-xl border border-white/20"
+                style={{
+                  backgroundImage: `url(${item.bg})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+              >
+                <h3 className="text-xl font-bold mb-2 drop-shadow-md">
+                  {item.title}
+                </h3>
+
+                {isMultiLine ? (
+                  <div className="space-y-1">
+                    {item.subtitle.map((line, i) => (
+                      <p
+                        key={i}
+                        className="text-sm font-medium leading-snug drop-shadow-md"
+                      >
+                        {line}
+                      </p>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="text-sm font-medium drop-shadow-md">
+                    {item.subtitle}
+                  </p>
+                )}
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

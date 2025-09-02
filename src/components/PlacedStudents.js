@@ -16,7 +16,7 @@ const RecentlyPlaced = () => {
   const handleScroll = (direction) => {
     if (scrollRef.current) {
       scrollRef.current.scrollBy({
-        left: direction === "left" ? -300 : 300,
+        left: direction === "left" ? -250 : 250,
         behavior: "smooth",
       });
     }
@@ -31,11 +31,11 @@ const RecentlyPlaced = () => {
         </h2>
 
         {/* Wrapper for buttons + slider */}
-        <div className="relative">
+        <div className="relative flex items-center">
           {/* Left Button */}
           <button
             onClick={() => handleScroll("left")}
-            className="hidden sm:flex absolute left-0 top-1/2 -translate-y-1/2 bg-white shadow p-2 rounded-full hover:bg-gray-100 z-10"
+            className="absolute left-0 z-10 bg-white shadow p-2 rounded-full hover:bg-gray-100"
           >
             ⟨
           </button>
@@ -43,13 +43,12 @@ const RecentlyPlaced = () => {
           {/* Sliding Row */}
           <div
             ref={scrollRef}
-            className="flex overflow-x-auto space-x-4 sm:space-x-6 scrollbar-hide scroll-smooth px-2 sm:px-10 snap-x"
-            style={{ WebkitOverflowScrolling: "touch" }}
+            className="flex overflow-hidden space-x-4 sm:space-x-6 scroll-smooth px-8"
           >
             {placedStudents.map((student, index) => (
               <div
                 key={index}
-                className="min-w-[200px] sm:min-w-[220px] bg-purple-100 rounded-xl shadow-md hover:shadow-lg transition duration-300 p-4 sm:p-6 text-center flex-shrink-0 snap-start"
+                className="min-w-[200px] sm:min-w-[220px] bg-purple-100 rounded-xl shadow-md hover:shadow-lg transition duration-300 p-4 sm:p-6 text-center flex-shrink-0"
               >
                 <img
                   src={student.image}
@@ -68,7 +67,7 @@ const RecentlyPlaced = () => {
           {/* Right Button */}
           <button
             onClick={() => handleScroll("right")}
-            className="hidden sm:flex absolute right-0 top-1/2 -translate-y-1/2 bg-white shadow p-2 rounded-full hover:bg-gray-100 z-10"
+            className="absolute right-0 z-10 bg-white shadow p-2 rounded-full hover:bg-gray-100"
           >
             ⟩
           </button>

@@ -13,18 +13,31 @@ const ReviewSection = () => {
         </h2>
 
         {/* Top Review Logos */}
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-6 mb-6">
-          <img
-            src="/Image/Asset35.svg"
-            alt="Google Review"
-            className="w-[180px] h-[60px] object-contain rounded-md shadow"
-          />
-          <img
-            src="/Image/Asset36.svg"
-            alt="Justdial Review"
-            className="w-[180px] h-[60px] object-contain rounded-md shadow"
-          />
-        </div>
+<div className="flex flex-col sm:flex-row justify-center items-center gap-6 mb-6">
+  {/* Google */}
+  <div className="flex items-center gap-2">
+    <img
+      src="/Image/Asset35.svg"
+      alt="Google Review"
+      className="w-[180px] h-[60px] object-contain rounded-md shadow"
+    />
+    <span className="text-black font-semibold text-lg">5.0</span>
+  </div>
+
+  {/* Divider */}
+  <div className="w-px h-8 bg-gray-400"></div>
+
+  {/* Justdial */}
+  <div className="flex items-center gap-2">
+    <img
+      src="/Image/Asset36.svg"
+      alt="Justdial Review"
+      className="w-[180px] h-[60px] object-contain rounded-md shadow"
+    />
+    <span className="text-black font-semibold text-lg">4.9</span>
+  </div>
+</div>
+
 
         {/* Buttons + Icon Dropdown */}
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-10 relative">
@@ -63,7 +76,7 @@ const ReviewSection = () => {
           <img
             src="/Image/gOFofM.svg"
             alt="Review Banner"
-            className="w-full h-[600px] object-cover rounded-lg mb-6"
+            className="w-full h-[800px] object-cover rounded-lg mb-6"
           />
 
           {/* Software Covered Section Inside Same Box */}
@@ -73,55 +86,56 @@ const ReviewSection = () => {
 
         <div className="space-y-6">
   {/* Photoshop */}
-  <div className="flex items-center bg-white px-4 py-3 rounded-md shadow-sm border border-gray-200 max-w-fit mx-auto">
-    <img
-      src="/Image/sjcRYS.svg"
-      alt="Photoshop"
-      className="w-[300px] h-[150px] object-contain mr-4"
-    />
-    <div className="flex flex-col justify-center w-[300px] h-[150px]">
-      <h4 className="text-[16px] font-semibold text-gray-800 leading-tight">
-        Photoshop
-      </h4>
-      <button className="mt-2 px-4 py-1 bg-purple-600 text-white text-xs rounded hover:bg-purple-700 transition">
-        Read More
-      </button>
-    </div>
+<div className="flex items-center bg-white px-4 py-3 rounded-md shadow-sm border border-gray-200 max-w-fit mx-auto mb-4">
+  <img
+    src="/Image/sjcRYS.svg"
+    alt="Photoshop"
+    className="w-[250px] h-[150px] object-contain mr-4"
+  />
+  <div className="flex flex-col justify-center">
+    <h4 className="text-[16px] font-semibold text-gray-800 leading-tight">
+      Photoshop
+    </h4>
+    <button className="mt-2 inline-block px-3 py-1 bg-purple-600 text-white text-xs rounded hover:bg-purple-700 transition w-auto">
+      Read More
+    </button>
   </div>
+</div>
 
-  {/* Premiere Pro */}
-  <div className="flex flex-row-reverse items-center bg-white px-4 py-3 rounded-md shadow-sm border border-gray-200 max-w-fit mx-auto">
-    <img
-      src="/Image/ynQkii.svg"
-      alt="Premiere Pro"
-      className="w-[300px] h-[150px] object-contain ml-4"
-    />
-    <div className="flex flex-col justify-center text-right w-[300px] h-[150px]">
-      <h4 className="text-[16px] font-semibold text-gray-800 leading-tight">
-        Premiere Pro
-      </h4>
-      <button className="mt-2 px-4 py-1 bg-purple-600 text-white text-xs rounded hover:bg-purple-700 transition">
-        Read More
-      </button>
-    </div>
+{/* Premiere Pro */}
+<div className="flex flex-row-reverse items-center bg-white px-4 py-3 rounded-md shadow-sm border border-gray-200 max-w-fit mx-auto mb-4">
+  <img
+    src="/Image/ynQkii.svg"
+    alt="Premiere Pro"
+    className="w-[250px] h-[150px] object-contain ml-4"
+  />
+  <div className="flex flex-col justify-center text-right">
+    <h4 className="text-[16px] font-semibold text-gray-800 leading-tight">
+      Premiere Pro
+    </h4>
+    <button className="mt-2 inline-block px-3 py-1 bg-purple-600 text-white text-xs rounded hover:bg-purple-700 transition w-auto">
+      Read More
+    </button>
   </div>
+</div>
 
-  {/* After Effects */}
-  <div className="flex items-center bg-white px-4 py-3 rounded-md shadow-sm border border-gray-200 max-w-fit mx-auto">
-    <img
-      src="/Image/VrybWN.svg"
-      alt="After Effects"
-      className="w-[300px] h-[150px] object-contain mr-4"
-    />
-    <div className="flex flex-col justify-center w-[300px] h-[150px]">
-      <h4 className="text-[16px] font-semibold text-gray-800 leading-tight">
-        After Effects
-      </h4>
-      <button className="mt-2 px-4 py-1 bg-purple-600 text-white text-xs rounded hover:bg-purple-700 transition">
-        Read More
-      </button>
-    </div>
+{/* After Effects */}
+<div className="flex items-center bg-white px-4 py-3 rounded-md shadow-sm border border-gray-200 max-w-fit mx-auto mb-4">
+  <img
+    src="/Image/VrybWN.svg"
+    alt="After Effects"
+    className="w-[250px] h-[150px] object-contain mr-4"
+  />
+  <div className="flex flex-col justify-center">
+    <h4 className="text-[16px] font-semibold text-gray-800 leading-tight">
+      After Effects
+    </h4>
+    <button className="mt-2 inline-block px-3 py-1 bg-purple-600 text-white text-xs rounded hover:bg-purple-700 transition w-auto">
+      Read More
+    </button>
   </div>
+</div>
+
 </div>
 
 
