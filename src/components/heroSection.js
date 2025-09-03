@@ -11,29 +11,29 @@ const HeroWithVideo = () => {
           <img
             src="bag.webp"
             alt="Handbag & Accessories"
-            className="rounded-lg shadow-lg w-full max-w-[280px] sm:max-w-xs"
+            className="hidden md:block rounded-lg shadow-lg w-full max-w-[280px] sm:max-w-xs"
           />
           <img
             src="head.webp"
             alt="Person with Headphones"
-            className="rounded-lg shadow-lg w-full max-w-[280px] sm:max-w-xs"
+            className="hidden md:block rounded-lg shadow-lg w-full max-w-[280px] sm:max-w-xs"
           />
         </div>
 
         {/* Center Content */}
-       <div className="text-center text-3xl md:col-span-1">
-  <h1
-    className="font-extrabold leading-snug space-y-1"
-    style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}
-  >
-    <span className="block text-3xl sm:text-4xl md:text-4xl text-black">Best</span>
-    <span className="block text-2xl sm:text-3xl md:text-3xl text-black">Institute for</span>
-    <span className="block text-2xl sm:text-3xl md:text-3xl text-[#6a0dad]">Graphic Designing,</span>
-    <span className="block text-2xl sm:text-3xl md:text-3xl text-pink-500">Digital Marketing</span>
-    <span className="block text-2xl sm:text-3xl md:text-3xl text-[#6A0DAD]">&</span>
-    <span className="block text-2xl sm:text-3xl md:text-3xl text-blue-500">Video Editing</span>
-    <span className="block text-2xl sm:text-3xl md:text-3xl text-black">Courses in Delhi</span>
-  </h1>
+        <div className="text-center text-3xl md:col-span-1">
+          <h1
+            className="font-extrabold leading-snug space-y-1"
+            style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}
+          >
+            <span className="block text-3xl sm:text-4xl md:text-4xl text-black">Best</span>
+            <span className="block text-2xl sm:text-3xl md:text-3xl text-black">Institute for</span>
+            <span className="block text-2xl sm:text-3xl md:text-3xl text-[#6a0dad]">Graphic Designing,</span>
+            <span className="block text-2xl sm:text-3xl md:text-3xl text-pink-500">Digital Marketing</span>
+            <span className="block text-2xl sm:text-3xl md:text-3xl text-[#6A0DAD]">&</span>
+            <span className="block text-2xl sm:text-3xl md:text-3xl text-blue-500">Video Editing</span>
+            <span className="block text-2xl sm:text-3xl md:text-3xl text-black">Courses in Delhi</span>
+          </h1>
 
           <p
             className="mt-4 text-sm sm:text-base leading-relaxed text-gray-700 px-2"
@@ -73,19 +73,19 @@ const HeroWithVideo = () => {
         </div>
       </div>
 
-     {/* Video Section */}
-<div className="max-w-6xl mx-auto px-4 pb-12">
-  <div className="relative w-full overflow-hidden rounded-xl shadow-xl" style={{ paddingTop: '56.25%' }}>
-    <video
-      className="absolute top-0 left-0 w-full h-full object-cover rounded-xl"
-      src="/Video/frontvideo2.mp4"
-      autoPlay
-      loop
-      muted
-      playsInline
-    ></video>
-  </div>
-</div>
+      {/* Video Section */}
+      <div className="max-w-6xl mx-auto px-4 pb-12">
+        <div className="relative w-full overflow-hidden rounded-xl shadow-xl" style={{ paddingTop: '56.25%' }}>
+          <video
+            className="absolute top-0 left-0 w-full h-full object-cover rounded-xl"
+            src="/Video/frontvideo2.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+          ></video>
+        </div>
+      </div>
     </section>
   );
 };
