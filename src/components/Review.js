@@ -39,17 +39,35 @@ const ReviewSection = () => {
 </div>
 
 
-        {/* Buttons + Icon Dropdown */}
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-10 relative">
-          <button className="px-4 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition">
-            Students Reviews
-          </button>
-          <button className="px-4 py-2 bg-green-600 text-white rounded-md shadow hover:bg-green-700 transition">
-            Student Work
-          </button>
-          <button className="px-4 py-2 bg-purple-600 text-white rounded-md shadow hover:bg-purple-700 transition">
-            Upcoming Batch
-          </button>
+       {/* Buttons + Icon Dropdown */}
+<div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-10 relative">
+  <button
+    onClick={() => {
+      document.getElementById("testimonials-section")?.scrollIntoView({ behavior: "smooth" });
+    }}
+    className="px-4 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition"
+  >
+    Students Reviews
+  </button>
+
+  <button
+    onClick={() => {
+      document.getElementById("portfolio-section")?.scrollIntoView({ behavior: "smooth" });
+    }}
+    className="px-4 py-2 bg-green-600 text-white rounded-md shadow hover:bg-green-700 transition"
+  >
+    Student Work
+  </button>
+
+  <button
+    onClick={() => {
+      document.getElementById("upcoming-section")?.scrollIntoView({ behavior: "smooth" });
+    }}
+    className="px-4 py-2 bg-purple-600 text-white rounded-md shadow hover:bg-purple-700 transition"
+  >
+    Upcoming Batch
+  </button>
+</div>
 
           {/* Dropdown Icon */}
           <div className="relative">
@@ -140,7 +158,7 @@ const ReviewSection = () => {
 
 
         </div>
-      </div>
+      
     </section>
   );
 };

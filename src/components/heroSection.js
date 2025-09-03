@@ -73,17 +73,19 @@ const HeroWithVideo = () => {
         </div>
       </div>
 
-      {/* Video Placeholder Section */}
-      <div className="max-w-6xl mx-auto px-4 pb-12">
-        <div
-          className="relative w-full overflow-hidden rounded-xl shadow-xl bg-gray-200 flex items-center justify-center"
-          style={{ paddingTop: '56.25%' }}
-        >
-          <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center text-gray-600 text-sm sm:text-base font-semibold text-center px-4">
-            VIDEO AUTO PLAY (Placeholder)
-          </div>
-        </div>
-      </div>
+     {/* Video Section */}
+<div className="max-w-6xl mx-auto px-4 pb-12">
+  <div className="relative w-full overflow-hidden rounded-xl shadow-xl" style={{ paddingTop: '56.25%' }}>
+    <video
+      className="absolute top-0 left-0 w-full h-full object-cover rounded-xl"
+      src="/Video/frontvideo2.mp4"
+      autoPlay
+      loop
+      muted
+      playsInline
+    ></video>
+  </div>
+</div>
     </section>
   );
 };
