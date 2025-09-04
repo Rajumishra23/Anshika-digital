@@ -1,16 +1,22 @@
 // DigitalMarketing.jsx
 import React from "react";
-import Footer from "../components/Footer"; // only if you want footer here
+import Footer from "../components/Footer"; // optional
 
-const DigitalMarketing = () => {
+const VideoEditing = () => {
   return (
     <div className="p-6">
-      <h1 className="text-3xl font-bold text-center my-10">Graphic Designing Course</h1>
-      <p className="text-center max-w-3xl mx-auto">
-        Here you can add details about the Graphic Designing course, syllabus, and modules.
-      </p>
+      {/* Video Editing Section */}
+      <div className="max-w-4xl mx-auto text-center mb-16">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-indigo-600">Video Editing Course</h2>
+        <p className="text-gray-700 mb-6">
+          Learn professional video editing with industry-standard tools like Adobe Premiere Pro and Final Cut Pro. 
+          Master editing techniques, transitions, color grading, and audio editing to create stunning videos.
+        </p>
+      </div>
+
+      <Footer />
     </div>
   );
 };
 
-export default DigitalMarketing;
+export default VideoEditing;

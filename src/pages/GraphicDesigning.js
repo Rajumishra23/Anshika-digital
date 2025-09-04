@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 
 // Dummy software logos — replace with actual image paths
 const softwares = [
-  { name: "Adobe Illustrator", short: "Ai", gradient: "from-orange-500 to-purple-600", logo: "ai.png" },
+  { name: "Adobe Illustrator", short: "Ai", gradient: "from-orange-500 to-purple-600", logo: "Ai.png" },
   { name: "Adobe Photoshop", short: "Ps", gradient: "from-blue-900 to-black", logo: "ps.png" },
   { name: "Adobe InDesign", short: "Id", gradient: "from-pink-500 to-red-500", logo: "id.png" },
   { name: "CorelDRAW", short: "Corel", gradient: "from-green-500 to-teal-500", logo: "cd.png" },
