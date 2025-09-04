@@ -43,7 +43,7 @@ const HeroWithVideo = () => {
           </p>
 
           <button
-            className="mt-6 text-white text-sm sm:text-base font-semibold px-6 py-3 rounded-full shadow-lg transition-all duration-300 flex items-center gap-2 group mx-auto"
+            className="mt-6 text-white text-sm sm:text-base font-semibold px-6 py-3 rounded-full shadow-lg transition-all duration-300 flex items-center gap-2 mx-auto"
             style={{
               fontFamily: "Arial, Helvetica, sans-serif",
               backgroundImage: "url('bgbtn.webp')",
@@ -51,13 +51,24 @@ const HeroWithVideo = () => {
               backgroundPosition: "center",
             }}
           >
-            Free Career Counselling
-            <span className="transition-transform duration-300 group-hover:translate-x-1">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="white">
-                <path d="M10 5l7 7-7 7V5z" />
-              </svg>
-            </span>
+            Free Career Counselling →
           </button>
+
+          {/* Stable Dropdown */}
+          <div className="relative mt-6 inline-block text-left group">
+            <button className="px-4 py-2 rounded-md bg-purple-600 text-white font-semibold">
+              Courses
+            </button>
+
+            <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-300 z-50">
+              <ul className="text-gray-700">
+                <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Digital Marketing</li>
+                <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Graphic Designing</li>
+                <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Video Editing</li>
+                <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Web Development</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
         {/* Right Visual */}
@@ -75,7 +86,7 @@ const HeroWithVideo = () => {
 
       {/* Video Section */}
       <div className="max-w-6xl mx-auto px-4 pb-12">
-        <div className="relative w-full overflow-hidden rounded-xl shadow-xl" style={{ paddingTop: '56.25%' }}>
+        <div className="relative overflow-hidden rounded-xl shadow-xl mx-auto" style={{ width: '70%', paddingTop: '45%' }}>
           <video
             className="absolute top-0 left-0 w-full h-full object-cover rounded-xl"
             src="/Video/frontvideo2.mp4"

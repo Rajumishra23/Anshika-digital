@@ -1,56 +1,25 @@
-import React from 'react';
-import Navbar from './components/Navbar';
-import HeroWithVideo from './components/heroSection';
-import Courses from './components/Courses';
-import Demo from './components/Demo';
-import StudentFeedback from './components/StudentFeedback';
-import Placement from './components/Placement';
-import Portfolio from './components/Portfolio';
-import PlacedStudents from './components/PlacedStudents';
-import UpcomingBatches from './components/UpcomingBatches';
-import TeamMember from './components/TeamMember';
-import Testimonials from './components/Testimonials';
-import Founder from './components/Founder';
-import Reasons from './components/Reasons';
-import Footer from './components/Footer';
-import CourseHighlight from './components/CourseHighlights';
-import Review from './components/Review';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import DigitalMarketing from "./pages/DigitalMarketing";
+import VideoEditing from "./pages/VideoEditing";
+import GraphicDesigning from "./pages/GraphicDesigning";
 
 const App = () => {
   return (
-    <div>
-      <Navbar />
-      <HeroWithVideo />
+    <>
+      <Navbar /> {/* Navbar only here */}
 
-      <Courses />
-      <Demo />
-      <StudentFeedback />
-      <CourseHighlight />
-      <Review /> {/* Scroll buttons should be inside this component now */}
-      <Placement />
-
-      {/* Portfolio Section */}
-      <div id="portfolio-section">
-        <Portfolio />
-      </div>
-
-      <PlacedStudents />
-
-      {/* Testimonials Section */}
-      <div id="testimonials-section">
-        <Testimonials />
-      </div>
-
-      {/* Upcoming Batches Section */}
-      <div id="upcoming-section">
-        <UpcomingBatches />
-      </div>
-
-      <TeamMember />
-      <Founder />
-      <Reasons />
-      <Footer />
-    </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/digital-marketing" element={<DigitalMarketing />} />
+        <Route path="/video-editing" element={<VideoEditing />} />
+        <Route path="/graphic-designing" element={<GraphicDesigning />} />
+      </Routes>
+    </>
   );
 };
 

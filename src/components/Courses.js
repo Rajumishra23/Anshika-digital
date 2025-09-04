@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 
 const courses = [
   { title: "Graphic Designing Course", image: "course.webp" },
@@ -16,26 +16,47 @@ const courses = [
 ];
 
 const CourseSection = () => {
+  const sliderRef = useRef(null);
+
+  useEffect(() => {
+    const slider = sliderRef.current;
+    let scrollPos = 0;
+
+    const step = () => {
+      if (slider) {
+        scrollPos += 2; // increase speed
+        if (scrollPos >= slider.scrollWidth / 2) {
+          scrollPos = 0; // reset for infinite loop
+        }
+        slider.scrollLeft = scrollPos;
+      }
+      requestAnimationFrame(step);
+    };
+
+    step(); // start the animation
+
+    return () => {
+      // Cleanup not needed for requestAnimationFrame unless you want to cancel
+    };
+  }, []);
+
   return (
     <section className="bg-white py-16 px-4 overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        {/* Heading */}
         <h2 className="text-2xl sm:text-3xl font-bold text-center text-gray-800 mb-10">
           Select Your <span className="text-purple-600">Course</span>
         </h2>
 
-        {/* Auto-Sliding Container */}
         <div className="overflow-x-auto scrollbar-hide">
           <div
-            className="flex gap-4 sm:gap-6 px-2 sm:px-0 animate-scroll snap-x"
-            style={{
-              WebkitOverflowScrolling: "touch",
-            }}
+            ref={sliderRef}
+            className="flex gap-4 sm:gap-6"
+            style={{ scrollBehavior: "smooth" }}
           >
             {courses.concat(courses).map((course, index) => (
               <div
                 key={index}
-                className="bg-purple-100 rounded-xl shadow-md hover:shadow-lg transition duration-300 p-4 flex flex-col items-center text-center min-w-[220px] sm:min-w-[256px] flex-shrink-0 snap-start"
+                className="bg-purple-100 rounded-xl shadow-md transition duration-300 p-4 flex flex-col items-center text-center min-w-[220px] sm:min-w-[256px] flex-shrink-0"
               >
                 <img
                   src={course.image}
