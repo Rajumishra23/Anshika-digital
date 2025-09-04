@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 
 const courses = [
   { title: "Graphic Designing Course", image: "course.webp" },
@@ -18,45 +18,48 @@ const courses = [
 const CourseSection = () => {
   const sliderRef = useRef(null);
 
-  useEffect(() => {
-    const slider = sliderRef.current;
-    let scrollPos = 0;
+  const scrollLeft = () => {
+    sliderRef.current.scrollBy({ left: -300, behavior: "smooth" });
+  };
 
-    const step = () => {
-      if (slider) {
-        scrollPos += 2; // increase speed
-        if (scrollPos >= slider.scrollWidth / 2) {
-          scrollPos = 0; // reset for infinite loop
-        }
-        slider.scrollLeft = scrollPos;
-      }
-      requestAnimationFrame(step);
-    };
-
-    step(); // start the animation
-
-    return () => {
-      // Cleanup not needed for requestAnimationFrame unless you want to cancel
-    };
-  }, []);
+  const scrollRight = () => {
+    sliderRef.current.scrollBy({ left: 300, behavior: "smooth" });
+  };
 
   return (
-    <section className="bg-white py-16 px-4 overflow-hidden">
+    <section className="bg-white py-16 px-4">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-2xl sm:text-3xl font-bold text-center text-gray-800 mb-10">
-          Select Your <span className="text-purple-600">Course</span>
-        </h2>
+        {/* Heading + Buttons */}
+        <div className="flex flex-col sm:flex-row justify-between items-center mb-10 gap-4">
+  <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 text-center sm:text-left flex-1">
+    Select Your <span className="text-purple-600">Course</span>
+  </h2>
+          <div className="flex gap-2">
+            <button
+              onClick={scrollLeft}
+              className="bg-purple-600 text-white p-2 rounded-md hover:bg-purple-700 transition"
+            >
+              ◀
+            </button>
+            <button
+              onClick={scrollRight}
+              className="bg-purple-600 text-white p-2 rounded-md hover:bg-purple-700 transition"
+            >
+              ▶
+            </button>
+          </div>
+        </div>
 
-        <div className="overflow-x-auto scrollbar-hide">
+        {/* Courses Slider */}
+        <div className="relative">
           <div
             ref={sliderRef}
-            className="flex gap-4 sm:gap-6"
-            style={{ scrollBehavior: "smooth" }}
+            className="flex gap-4 sm:gap-6 overflow-x-auto whitespace-nowrap no-scrollbar scroll-smooth"
           >
-            {courses.concat(courses).map((course, index) => (
+            {courses.map((course, index) => (
               <div
                 key={index}
-                className="bg-purple-100 rounded-xl shadow-md transition duration-300 p-4 flex flex-col items-center text-center min-w-[220px] sm:min-w-[256px] flex-shrink-0"
+                className="bg-purple-100 rounded-xl shadow-md transition duration-300 p-4 inline-flex flex-col items-center text-center min-w-[220px] sm:min-w-[256px]"
               >
                 <img
                   src={course.image}

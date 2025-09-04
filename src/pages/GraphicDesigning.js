@@ -112,6 +112,7 @@ const GraphicDesigning = () => {
           ))}
         </div>
       </motion.div>
+      <br></br>
 
       <Footer />
     </section>
